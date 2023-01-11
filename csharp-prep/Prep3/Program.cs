@@ -6,9 +6,10 @@ class Program
     {
         int guess = 0;
         Console.WriteLine("Welcome to the number guessing game!");
-        Console.WriteLine("Please enter the magic number. ");
-        int magicNumber = Int16.Parse(Console.ReadLine());
-
+        // Console.WriteLine("Please enter the magic number. ");
+        // int magicNumber = Int16.Parse(Console.ReadLine());
+        Random randomGenerator = new Random();
+        int magicNumber = randomGenerator.Next(1,15);
         int i = 0;
 
 // Had help from a github user: https://gist.github.com/MrAwesomeness/6196354b6643faaad801  No code copied, just concepts used.
