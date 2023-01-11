@@ -10,6 +10,7 @@ class Program
         int magicNumber = Int16.Parse(Console.ReadLine());
 
 // Had help from a github user: https://gist.github.com/MrAwesomeness/6196354b6643faaad801  No code copied, just concepts used.
+// Learned that my guess write and readlines needed to be INSIDE the while loop in order for the user to be able to guess more than once.
 
         while (guess != magicNumber)
         {
