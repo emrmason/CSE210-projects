@@ -11,7 +11,7 @@ public class MenuLists
         "4. Save",
         "5. Quit"
     };
-    public void DisplayMenu() 
+    public void DisplayMenuOpts() 
     {
         for(int x = 0; x < menuOpts.Count; x++)
         {
@@ -44,6 +44,9 @@ public class MenuLists
 
     public void displayPrompts()
     {
+        var random = new Random();
+        int index = random.Next(entryPrompt.Count);
+        Console.WriteLine(entryPrompt[index]);
 
     }
 }
