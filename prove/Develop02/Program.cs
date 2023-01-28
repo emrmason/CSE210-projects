@@ -31,11 +31,17 @@ class Program
     }
 
     else if (userChoice == "3"){
-
+        Console.Write("Enter a filename to load from, .txt: ");
+        string filename = Console.ReadLine();
+        Console.Write(System.IO.File.ReadAllLines(filename));
     }
 
     else if (userChoice == "4"){
-        
+        Console.Write("Enter a filename to save to, .txt: ");
+        string filename = Console.ReadLine();
+        foreach(string entry in entries){
+        System.IO.File.WriteAllText(filename, entry);
+        };
     }
     else if (userChoice == "5") {
         start = false;
