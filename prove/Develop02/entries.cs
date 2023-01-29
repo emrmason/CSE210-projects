@@ -2,8 +2,11 @@ using System;
 using System.Collections.Generic;
 
 public class Entries 
-{
-    public List<string> entries = new List<string> {
+ {   
+//     public Entry();
 
-    };
+//     public static List<Entry> entries = new List<Entry> 
+//     {
+
+//     };
 }
