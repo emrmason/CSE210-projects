@@ -4,9 +4,14 @@ using System.IO;
 
 class Program
 {
+
     static void Main(string[] args)
 {
     bool start = true;
+    // Thank you, Eric C from the tutoring resources! 
+    List<string> entries = new List<string>()
+    {   
+    };
 
     while (start == true){
         Menu menu1 = new Menu();
@@ -19,7 +24,8 @@ class Program
         string prompt = displayPrompt();
         Console.Write($"{prompt}\n>");
         string text = Console.ReadLine();
-        Journal anEntry = new Journal(date, prompt, text);
+        string anEntry = ($"{date}, {prompt}, {text}");
+        Journal entry1 = new Journal(date, prompt, text);
         entries.Add($"{date}, {prompt}, {text}");
     }
 
@@ -89,10 +95,7 @@ class Program
         return randomPrompt;
 
     } 
-    static List<string> entries = new List<string>(){
-        
-    };
-}
+    }
 
 
 
