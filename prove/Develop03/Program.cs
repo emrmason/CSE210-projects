@@ -7,7 +7,11 @@ class Program
         Console.WriteLine("Welcome to the Scripture Memorization Program!");
         Scripture scripture = new Scripture();
         Reference reference= new Reference();
+        Word words = new Word();
         reference.DisplayFullReference();
-        scripture.Display();
+        // scripture.Display();
+        words.DisplayWords();
     }
+
+
 }

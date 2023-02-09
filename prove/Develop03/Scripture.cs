@@ -8,6 +8,6 @@ class Scripture
 
     public void Display()
     {
-        Console.WriteLine($"{_reference}\n{_scripture}");
+        Console.WriteLine($"{_scripture}");
     }
 }
