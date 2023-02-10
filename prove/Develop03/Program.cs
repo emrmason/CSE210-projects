@@ -6,12 +6,13 @@ class Program
     {
 
         bool start = true;
+        
         Console.WriteLine("Welcome to the Scripture Memorization Program!");
         Scripture scripture = new Scripture();
         Reference reference= new Reference();
         Word words = new Word();
         reference.DisplayFullReference();
-        // scripture.Display();
+        words.isHidden = false;
         words.DisplayWords();
         Console.WriteLine("\n Hit enter to hide words, type quit to exit. \n");
         string action = Console.ReadLine();
@@ -22,9 +23,15 @@ class Program
             words.DisplayHidden();
             Console.WriteLine("\n Hit enter to hide words, type quit to exit. \n");
             action = Console.ReadLine();
-            if (action != "quit")
+            if (action != "quit" && words.isHidden == false)
             {
                 start= true;
+            }
+            else if (action != "quit" && words.isHidden == true)
+            {
+                Console.WriteLine("Well done, you've memorized it!");
+                start = false;
+                break;
             }
             else 
             {
