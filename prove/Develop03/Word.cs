@@ -14,8 +14,32 @@ class Word
         {
             foreach(string i in separateWords)
             {
-                Console.WriteLine(i);
+                Console.Write($"{i} ");
             }
         }
     
+        public void DisplayHidden()
+        {
+            string hiddenWords = " _____ ";
+            int y = separateWords.Length;
+            // int x = 0;
+            
+            Random i = new Random();
+            int w = i.Next(0, y);
+            separateWords[w] = hiddenWords;
+
+                foreach(string z in separateWords)
+                {
+                    Console.Write($" {z}");
+                }
+                
+            
+                
+
+            //     int x = separateWords.Count();
+
+            //     Console.Write(separateWords[x]);
+                
+            // }
+        }
 }
