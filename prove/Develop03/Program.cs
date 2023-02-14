@@ -12,7 +12,7 @@ class Program
         Reference reference= new Reference();
         Word words = new Word();
         reference.DisplayFullReference();
-        words.isHidden = false;
+        // words.isHidden = false;
         words.DisplayWords();
         Console.WriteLine("\n Hit enter to hide words, type quit to exit. \n");
         string action = Console.ReadLine();
@@ -20,6 +20,7 @@ class Program
         while (start == true)
         {
             Console.Clear();
+            reference.DisplayFullReference();
             words.DisplayHidden();
             Console.WriteLine("\n Hit enter to hide words, type quit to exit. \n");
             action = Console.ReadLine();
