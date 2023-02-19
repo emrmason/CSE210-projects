@@ -25,32 +25,50 @@ class Scripture
         }
     }
 
-    public void indexWords()
-    {
-        for(int t=0; t < 141; t++)
-        {
-            separateWordsIndex.Add(t);
-        }
-    }
+    // public void indexWords()
+    // {
+    //     for(int t=0; t < 141; t++)
+    //     {
+    //         separateWordsIndex.Add(t);
+    //     }
+    // }
 
-    public int randNumber()
-    {
-        int z = 0;
-        for(int y = 0; y < 3;)
-        {
-        Random n = new Random();
-        z = n.Next(0, 140);
-        y++;
-        }
-        separateWordsIndex.Remove(z);
-        return z;
-    }
+    // public int randNumber()
+    // {
+    //     int z = 0;
+    //     for(int y = 0; y < 3;)
+    //     {
+    //     Random n = new Random();
+    //     z = n.Next(0, 140);
+    //     y++;
+    //     }
+    //     separateWordsIndex.Remove(z);
+    //     return z;
+    // }
 
     public void DisplayHidden()
     {
-        Word hider = new Word();
-        string hideWords();
-
-    }
+        string hiddenWords = " _____ ";
+        int y = separateWords.Length;           
+        Random i = new Random();
+        int w = i.Next(0, y);
+            if(separateWordsIndex.Contains(w))
+            {
+                Random n = new Random();
+                int v = i.Next(0,y);
+                separateWords[v] = hiddenWords;
+                separateWordsIndex.Add(v);
+            }
+            else
+            {
+                separateWords[w] = hiddenWords;
+                separateWordsIndex.Add(w);
+            }
+            
+        foreach(string z in separateWords)
+        {
+            Console.Write($" {z}");
+        }
+        }
 
 }

@@ -7,19 +7,20 @@ class Word
     
     Scripture word = new Scripture();
 
-    public string hideWord()
-    {
-        foreach (string a in word.separateWords)
-        {
-            string word = a;
-            string newWord = "_____";
-            word = newWord;
-            isHidden = true;
-        }
-        string nothing = "nothing";
-        Console.Write(word);
-        return nothing;
-    }
+    // public string hideWord()
+    // {
+    //     for(int xy=0; xy<3; xy++)
+    //     {
+    //         int z = word.separateWordsIndex[];
+    //         string eachWord = word.separateWords[z];
+    //         string newWord = "_____";
+    //         eachWord = newWord;
+    //         isHidden = true;
+    //     }
+    //     string nothing = "nothing";
+    //     Console.Write(word);
+    //     return nothing;
+    // }
 
 
         // public void DisplayHidden()

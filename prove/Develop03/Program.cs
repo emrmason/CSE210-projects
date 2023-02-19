@@ -13,7 +13,7 @@ class Program
         Word words = new Word();
         reference.DisplayFullReference();
         // words.isHidden = false;
-        words.DisplayWords();
+        scripture.DisplayScripture();
         Console.WriteLine("\n Hit enter to hide words, type quit to exit. \n");
         string action = Console.ReadLine();
 
@@ -21,7 +21,7 @@ class Program
         {
             Console.Clear();
             reference.DisplayFullReference();
-            words.DisplayHidden();
+            scripture.DisplayHidden();
             Console.WriteLine("\n Hit enter to hide words, type quit to exit. \n");
             action = Console.ReadLine();
             if (action != "quit" && words.isHidden == false)
