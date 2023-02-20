@@ -5,19 +5,16 @@ public class MathAssignment : Assignment
     protected string _textbookSection = "";
     protected string _problems = "";
 
-    // public MathAssignment(): base()
-    // {
-    //     string name = _studentName;
-    //     string topic = _topic;
-    //     string assignedSection = _textbookSection;
-    //     string assignedProblems = _problems;
-    // }
     public MathAssignment(): base()
     {
-        string section = _textbookSection;
-        string problems = _problems;
-        string name = _studentName;
-        string topic = _topic;
+
+    }
+    public MathAssignment(string name, string topic, string section, string problems): base(name, topic)
+    {
+        // _textbookSection = section;
+        // _problems = problems;
+        // _studentName = name;
+        // _topic = topic;
     }     
 
   
@@ -36,12 +33,12 @@ public class MathAssignment : Assignment
         _problems = problems;
     }
 
-    public string getMathSummary()
+    public string getMathSummary(string name, string topic, string section, string problems)
     {
-        string name = _studentName;
-        string topic = _topic;
-        string section = _textbookSection;
-        string problems = _problems;
+        _studentName = name;
+        _topic = topic;
+        _textbookSection = section;
+        _problems = problems;
         return $"{name} - {topic}, {section} problems {problems}";
     }
 }
