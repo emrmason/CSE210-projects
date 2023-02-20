@@ -21,17 +21,17 @@ public class Assignment
         
     }
 
-    // public string getAssignment(string studentName, string topic)
-    // {
-    //     _studentName = studentName;
-    //     _topic = topic;
-    //     return _studentName + _topic;
-    // // }
-    // public string getSummary(string name, string topic)
-    // {
-    //     string name = _studentName;
-    //     string topic = _topic;
-    //     return $"{name} - {topic} ";
-    // }
+    public string getAssignment(string studentName, string topic)
+    {
+        _studentName = studentName;
+        _topic = topic;
+        return _studentName + _topic;
+    }
+    public string getSummary(string name, string topic)
+    {
+        _studentName = name;
+        _topic = topic;
+        return $"{name} - {topic} ";
+    }
     
 }
