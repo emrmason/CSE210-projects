@@ -12,11 +12,12 @@ public class WritingAssignment : Assignment
 
     }
 
-    public string getWritingAssignment(string title)
+    public string getWritingSummary(string name, string topic, string title)
     {
-        string newTitle = _title;
-        string name = _studentName;
-        return $"{title} by {name}";
+        _title = title;
+        _studentName = name;
+        _topic = topic;
+        return $"{topic}, {title} by {name}";
 
     }
     public void getTitle()
