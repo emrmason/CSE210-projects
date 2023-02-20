@@ -5,16 +5,50 @@ public class MathAssignment : Assignment
     protected string _textbookSection = "";
     protected string _problems = "";
 
-    public void getMathAssignmment()
+    public MathAssignment(): base()
     {
-        _textbookSection = "Ask your Instructor";
-        _problems = "Ask your Instructor";
+        string name = _studentName;
+        string topic = _topic;
+        string assignedSection = _textbookSection;
+        string assignedProblems = _problems;
+    }
+    public MathAssignment(string section, string problems)
+    {
+        _textbookSection = section;
+        _problems = problems;
+
+    }     
+
+    // public void getMathAssignment()
+    // {
+    //     _textbookSection = "Lesson 5.0";
+    //     _problems = "#12 - 30";
+    // }   
+    public string getMathAssignmment(string section, string problems)
+    {
+        string name = _studentName;
+        string topic = _topic;
+        section = _textbookSection;
+        problems = _problems;
+        return $"{name} - {topic}, {section} numbers {problems}";
+    }
+    // public string getMathAssignment()
+    // {
+    //     return $"{_textbookSection}, {_problems}";
+    // }
+
+    public void setMathAssignment(string section, string problems)
+    {
+        _textbookSection = section;
+        _problems = problems;
     }
 
-    public string setMathAssignment(string textbookSection, string problems)
+    public string getMathSummary() : base(getSummary(string name, string topic))
     {
-        _textbookSection = textbookSection;
-        _problems = problems;
-        return $"{_studentName}, {_topic}, {_textbookSection} numbers {_problems}";
+        string name = _studentName;
+        string topic = _topic;
+        string section = _textbookSection;
+        string problems = _problems;
+        return $"{name} - {topic}, {section} problems {problems}";
     }
 }
