@@ -9,9 +9,10 @@ class Program
 
         MathAssignment math1 = new MathAssignment();
         Console.WriteLine(math1.getMathSummary("Ben", "Algebra", "Lesson 5.3", "15-45 odd"));
+        Console.WriteLine(math1.getAssignment("Jack", "Trigonometry"));
 
         WritingAssignment write1 = new WritingAssignment();
-        Console.WriteLine(write1.getWritingSummary("Stacey", "WWII", "Propaganda uses"));
+        Console.WriteLine(write1.getWritingSummary("Stacey", "WWII", "Propaganda Uses"));
 
     }
 }
