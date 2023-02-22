@@ -6,7 +6,7 @@ class Timer
     {
 
     }
-    protected int _timeSet;
+    public int _timeSet;
     protected string _timeRequested = "How long would you like to do this activity? ";
     protected string _getReady = "Prepare to begin. . . ";
 
@@ -37,7 +37,15 @@ class Timer
             Console.Write("-");
             Thread.Sleep(250);
             Console.Write("\b \b");
+            Thread.Sleep(250);
         }
+    }
+    public int activityTime()
+    {
+        Console.WriteLine("How long would you like this activity to last? ");
+        _timeSet = Int32.Parse(Console.ReadLine());
+        return _timeSet;
+
     }
 
 }

@@ -17,6 +17,8 @@ class Program
             {
                 Timer startTime = new Timer();
                 startTime.prepTime();
+                Breathing breathing = new Breathing();
+                breathing.startBreathing();
 
             }
             else if (activity == 2)
