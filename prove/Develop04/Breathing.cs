@@ -22,17 +22,17 @@ class Breathing : Activity
         {
             for(int x = 0; x < breatheTime._timeSet;)
             {
-            Console.Write($"Breathe in. . . ");
+            Console.Write("< < Breathe in. . . \n \n");
             Thread.Sleep(5000);
-            Console.Write("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
+            // Console.Write("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
             x = x+5;
-            Console.Write("Breathe out. . .");
+            Console.Write("> > > Breathe out. . . \n \n");
             Thread.Sleep(7000);
-            Console.Write("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
+            // Console.Write("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
             x = x+7;
             }
         
-        Console.WriteLine($"Well done! You completed {seconds} seconds of the breathing activity.");
+        Console.WriteLine($"Well done! You completed {seconds} seconds of the breathing activity.\n\n\n");
         Thread.Sleep(10000);
         }
 
