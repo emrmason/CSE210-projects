@@ -11,8 +11,32 @@ class Program
             Menu menu = new Menu();
             Console.WriteLine("Welcome to the Mindfulness Program. Each activity is designed to help you \nslow down from the fast-paced world, and to think and feel deeply.\nPlease select from the following activities, or select 4 to quit.");
             menu.DisplayMenu();
-            Console.ReadLine();
+            int activity = Int32.Parse(Console.ReadLine());
+
+            if(activity == 1)
+            {
+                Timer startTime = new Timer();
+                startTime.prepTime();
+
+            }
+            else if (activity == 2)
+            {
+
+            }
+            else if (activity == 3)
+            {
+
+            }
+            else
+            {
+                runProg = false;
+                break;
+            }
+
+
+
         }
+
 
     }
 }
