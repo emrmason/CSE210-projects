@@ -2,7 +2,7 @@ using System;
 
 class Breathing : Activity
 {
-    string _welcomeMessage = "This activity is designed to focus on breathing in and out, relaxing your mind, \nand thinking only about your body and the breathing action.";
+    string _welcomeMessage = "\nThis activity is designed to focus on breathing in and out, relaxing your mind, \nand thinking only about your body and the breathing action.\n \n";
 
     // int counter = 5;
     
@@ -22,18 +22,48 @@ class Breathing : Activity
         {
             for(int x = 0; x < breatheTime._timeSet;)
             {
-            Console.Write("< < Breathe in. . . \n \n");
-            Thread.Sleep(5000);
-            // Console.Write("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
-            x = x+5;
-            Console.Write("> > > Breathe out. . . \n \n");
-            Thread.Sleep(7000);
-            // Console.Write("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
-            x = x+7;
+
+                Console.Write("< < Breathe in .");
+                Thread.Sleep(1000);
+                x++;
+                Console.Write(" . ");
+                Thread.Sleep(1000);
+                x++;
+                Console.Write(" . ");
+                Thread.Sleep(1000);
+                x++;
+                Console.Write(" . ");
+                Thread.Sleep(1000);
+                x++;
+                Console.Write(" . \n \n");
+                Thread.Sleep(1000);
+                x++;
+
+                Console.Write("> > > Breathe out.");
+                Thread.Sleep(1000);
+                x++;
+                Console.Write(" . ");
+                Thread.Sleep(1000);
+                x++;
+                Console.Write(" . ");
+                Thread.Sleep(1000);
+                x++;
+                Console.Write(" . ");
+                Thread.Sleep(1000);
+                x++;
+                Console.Write(" . ");
+                Thread.Sleep(1000);
+                x++;
+                Console.Write(" . ");
+                Thread.Sleep(1000);
+                x++;
+                Console.Write(" . ");
+                Thread.Sleep(1000);
+                x++;                                                                                                
             }
         
         Console.WriteLine($"Well done! You completed {seconds} seconds of the breathing activity.\n\n\n");
-        Thread.Sleep(10000);
+        Thread.Sleep(5000);
         }
 
     }
