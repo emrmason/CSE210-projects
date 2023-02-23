@@ -23,6 +23,10 @@ class Program
             }
             else if (activity == 2)
             {
+                Timer startTime = new Timer();
+                startTime.prepTime();
+                Reflecting reflecting = new Reflecting();
+                reflecting.startReflecting();
 
             }
             else if (activity == 3)

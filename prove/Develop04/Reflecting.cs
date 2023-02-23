@@ -38,11 +38,26 @@ class Reflecting : Activity
         int seconds = refTime._timeSet;
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(refTime._timeSet);
-        // if(startTime < endTime)
-        // {
-        //     Random sq = new Random();
-        //     firstQ = sq.Next(startQuestions);
-        // }
+        if(startTime < endTime)
+        {
+            var random = new Random();
+            int index = random.Next(startQuestions.Count);
+            string startQ = startQuestions[index];
+            Console.WriteLine(startQ);
+            Thread.Sleep(10000);
+
+            for(int x = 0; x < 5; x++)
+            {
+                var random2 = new Random();
+                int index2 = random.Next(refQuestions.Count);
+                string refQ = refQuestions[index];
+                Console.WriteLine(refQ);
+                Thread.Sleep(5000);
+            }    
+
+            Console.WriteLine($"Well done! You completed {seconds} seconds of the reflecting activity.\n\n\n");
+            Thread.Sleep(10000);
+        }
 
     }
 

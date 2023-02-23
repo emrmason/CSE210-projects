@@ -23,21 +23,21 @@ class Timer
         for(int x = 0; x < 5; x++)
         {
             Console.Write("|");
-            Thread.Sleep(100);
+            Thread.Sleep(150);
             Console.Write("\b \b");
             Console.Write("/");
-            Thread.Sleep(100);
+            Thread.Sleep(150);
             Console.Write("\b \b");
             Console.Write("-");
-            Thread.Sleep(100);
+            Thread.Sleep(150);
             Console.Write("\b \b");
             Console.Write("\\");
-            Thread.Sleep(100);
+            Thread.Sleep(150);
             Console.Write("\b \b");
             Console.Write("-");
-            Thread.Sleep(100);
+            Thread.Sleep(150);
             Console.Write("\b \b");
-            Thread.Sleep(100);
+            Thread.Sleep(150);
         }
     }
     public int activityTime()
