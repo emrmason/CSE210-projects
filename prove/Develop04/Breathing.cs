@@ -20,10 +20,9 @@ class Breathing : Activity
         DateTime endTime = startTime.AddSeconds(breatheTime._timeSet);
         if(startTime < endTime)
         {
-            for(int x = 0; x < breatheTime._timeSet;)
+            for(int x = 1; x < seconds;)
             {
-
-                Console.Write("< < Breathe in .");
+                Console.Write("< < Breathe in . ");
                 Thread.Sleep(1000);
                 x++;
                 Console.Write(" . ");
@@ -35,7 +34,7 @@ class Breathing : Activity
                 Console.Write(" . ");
                 Thread.Sleep(1000);
                 x++;
-                Console.Write(" . \n \n");
+                Console.Write(" . \n ");
                 Thread.Sleep(1000);
                 x++;
 
@@ -57,12 +56,12 @@ class Breathing : Activity
                 Console.Write(" . ");
                 Thread.Sleep(1000);
                 x++;
-                Console.Write(" . ");
+                Console.Write(" . \n");
                 Thread.Sleep(1000);
                 x++;                                                                                                
             }
         
-        Console.WriteLine($"Well done! You completed {seconds} seconds of the breathing activity.\n\n\n");
+        Console.WriteLine($"Well done! You completed {seconds} seconds of the breathing activity.\n");
         Thread.Sleep(5000);
         }
 
