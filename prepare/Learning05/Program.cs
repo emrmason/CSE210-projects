@@ -30,18 +30,17 @@ class Program
         shapes.Add(circle1);
 
 
-        // foreach(item in shapes)
-        // {
-        //     if 
-        //     Console.WriteLine($"The area of the {color} {shape} is {area}.");
-        // }
+        foreach(Shape shape in shapes)
+        {
+            Shape shape1 = new Shape();
+            string color = shape.getColor();
+            double area = shape.getArea();
+            Console.WriteLine($"The area of the {color} {shape} is {area}.");
+        }
 
-
-        Console.WriteLine($"The area of the {s1Color} square is {s1Area}.");
-        Console.WriteLine($"The area of the {rect1Color} rectangle is {rect1Area}.");
-        Console.WriteLine($"The area of the {circle1Color} circle is {circle1Area}.");
-
-
+        // Console.WriteLine($"The area of the {s1Color} square is {s1Area}.");
+        // Console.WriteLine($"The area of the {rect1Color} rectangle is {rect1Area}.");
+        // Console.WriteLine($"The area of the {circle1Color} circle is {circle1Area}.");
 
     }
 }
