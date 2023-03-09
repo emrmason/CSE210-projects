@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 
 class Program
-{
+{        
+
     static void Main(string[] args)
     {
         bool startGoals = true;
@@ -16,11 +18,23 @@ class Program
 
             if(choice == 1)
             {
-                Console.WriteLine("Create a Goal");
+                Goal goal = new Goal();
+                Console.Write("\nName your goal: ");
+                string name = Console.ReadLine();
+                Console.Write("\nDescribe your goal: ");
+                string description = Console.ReadLine();
+                Console.Write("\nHow many points will this goal be worth? ");
+                int points = Int32.Parse(Console.ReadLine());
+                // goals.Add(string name, string description, int points);
+                // Console.WriteLine("Create a Goal");
                 startGoals = true;
             }
             if(choice == 2)
             {
+                // foreach(Goal in goals)
+                // {
+                //     Console.WriteLine(Goal);
+                // }
                 Console.WriteLine("List Goals");
                 startGoals = true;
             }
