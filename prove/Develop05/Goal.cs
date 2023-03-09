@@ -17,19 +17,16 @@ class Goal
 
     }
 
-    public void SetGoal(string name, string description, int points, bool isComplete)
+    public virtual CreateGoal()
     {
-        name = _name;
-        description = _description;
-        points = _pointVal;
-        isComplete = false;
-    }
-
-    public void CreateGoal(string name, string description, int points, bool isComplete)
-    {
-        // goals.Add("")
 
     }
+
+    // public void GetGoal(string name, string description, int points, bool isComplete)
+    // {
+    //     goals.Add("")
+
+    // }
 
 
 }
