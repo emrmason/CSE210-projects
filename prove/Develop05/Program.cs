@@ -74,22 +74,27 @@ class Program
             {
                 foreach(Goal Goal in goalsList)
                 {
-                    Console.WriteLine(Goal.ToString());
-                    //Console.WriteLine(Goal);
+                    Goal glist = new Goal();
+                    string name = Goal._name;
+                    string desc = Goal._description;
+                    int pworth = Goal._pointVal;
+                    Console.WriteLine($"{x}. [ ] {name}, {desc}, worth {pworth} points.");
                 }
-
                 startGoals = true;
             }
 
             if(choice == 3)
             {
-                Console.WriteLine("Save Goals");
+                
+                Console.WriteLine("\nWhat filename should this save to? ");
                 startGoals = true;
             }
 
             if(choice == 4)
             {
-                Console.WriteLine("Load Goals");
+                Console.WriteLine("Enter the filename to be opened: ");
+                string filename = (Console.ReadLine());
+                string lines = System.IO.File.ReadAllLines(filename);
                 startGoals = true;
             }
 

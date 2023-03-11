@@ -18,8 +18,12 @@ class Goal
 
     }
 
-    public Goal(string _name, string _description, int _pointVal, bool _isComplete)
+    public Goal(string name, string description, int pointVal, bool isComplete)
     {
+        _name = name;
+        _description = description;
+        _pointVal = pointVal;
+        _isComplete = false;
 
     }
 
