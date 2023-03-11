@@ -10,6 +10,11 @@ public Simple()
 {
 
 }
+
+public Simple(string _name, string _description, int _pointVal, bool _isComplete) 
+{
+
+}
 public string getName()
 {
     Console.WriteLine("\nWhat is the name of your goal? ");
@@ -47,7 +52,6 @@ public void setPoints(int points)
 {
     _pointVal = points;
 }
-
 
 
 

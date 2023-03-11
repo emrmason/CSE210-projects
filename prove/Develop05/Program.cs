@@ -36,8 +36,9 @@ class Program
                     string name = goal1.getName();
                     string desc = goal1.getDesc();
                     int pointVal = goal1.getPoints();
+                    // string goal11 = goal1.ToString();
                     goalsList.Add(goal1);
-                    startGoals = true; 
+                    // startGoals = true; 
 
                 }
                 if(type == 2)
@@ -49,57 +50,65 @@ class Program
                     int pointVal = goal2.getPoints();
                     int numEntries = goal2.getEntries();
                     goalsList.Add(goal2);
-                    startGoals = true;                    
+                    // startGoals = true;                    
                 }
                 if(type == 3)
                 {
                     x += 1;
                     Eternal goal3 = new Eternal();
-
-                    startGoals = true;                    
+                    string name = goal3.getName();
+                    string desc = goal3.getDesc();
+                    int pointVal = goal3.getPoints();
+                    goalsList.Add(goal3);
+                    // startGoals = true;                    
                 }
-                else
-                {
-                    Console.WriteLine("Please make a valid selection.");
-                    menu.displayGoalTypes();
-
-                }
-
+                // else
+                // {
+                //     Console.WriteLine("Please make a valid selection.");
+                // }
+                Console.WriteLine("\nMake another selection: ");
+                startGoals = true;
             }
+
             if(choice == 2)
             {
-                foreach(object Goal in goalsList)
+                foreach(Goal Goal in goalsList)
                 {
-                    Console.WriteLine(Goal);
+                    Console.WriteLine(Goal.ToString());
+                    //Console.WriteLine(Goal);
                 }
 
                 startGoals = true;
             }
+
             if(choice == 3)
             {
                 Console.WriteLine("Save Goals");
                 startGoals = true;
             }
+
             if(choice == 4)
             {
                 Console.WriteLine("Load Goals");
                 startGoals = true;
             }
+
             if(choice == 5)
             {
                 Console.WriteLine("Record Events");
                 startGoals = true;
             }
+
             if(choice == 6)
             {
                 Console.WriteLine("Well done for working on your goals!");
                 startGoals = false;
             }
-            else
-            {
-                Console.WriteLine("\nPlease make a valid selection from the list. \n");
-                startGoals = true;
-            }
+            // else
+            // {
+            //     Console.WriteLine("\nPlease make a valid selection from the list. \n");
+            //     startGoals = true;
+            // }
 
         }
     }

@@ -22,6 +22,8 @@ class Goal
     {
 
     }
+
+
     // public string getName()
     // {
     //     Console.WriteLine("\nWhat is the name of your goal? ");
