@@ -4,10 +4,15 @@ using System.Collections.Generic;
 class Program
 {        
 
+
     static void Main(string[] args)
     {
+        List<Goal> goalsList = new List<Goal>();
+        int x = 0;
+        int points = 0;
         bool startGoals = true;
-        Console.WriteLine("\nWelcome to the Goals program. Please select from the following menu options: \n");
+        Console.WriteLine($"\nYou have earned {points} points.");
+        Console.WriteLine("\nWelcome to the Eternal Goals program. Please select from the following menu options: \n");
 
         while(startGoals == true)
         {
@@ -18,24 +23,56 @@ class Program
 
             if(choice == 1)
             {
-                Goal goal = new Goal();
-                Console.Write("\nName your goal: ");
-                string name = Console.ReadLine();
-                Console.Write("\nDescribe your goal: ");
-                string description = Console.ReadLine();
-                Console.Write("\nHow many points will this goal be worth? ");
-                int points = Int32.Parse(Console.ReadLine());
-                // goals.Add(string name, string description, int points);
-                // Console.WriteLine("Create a Goal");
-                startGoals = true;
+                Menu menu1 = new Menu();
+                Console.WriteLine("\nWhat type of goal would you like to create? ");
+                menu.displayGoalTypes();
+                Console.Write("\nEnter your selection: ");
+                int type = Int32.Parse(Console.ReadLine());
+
+                if(type == 1)
+                {
+                    x += 1;
+                    Simple goal1 = new Simple();
+                    string name = goal1.getName();
+                    string desc = goal1.getDesc();
+                    int pointVal = goal1.getPoints();
+                    goalsList.Add(goal1);
+                    startGoals = true; 
+
+                }
+                if(type == 2)
+                {
+                    x += 1;
+                    Checklist goal2 = new Checklist();
+                    string name = goal2.getName();
+                    string desc = goal2.getDesc();
+                    int pointVal = goal2.getPoints();
+                    int numEntries = goal2.getEntries();
+                    goalsList.Add(goal2);
+                    startGoals = true;                    
+                }
+                if(type == 3)
+                {
+                    x += 1;
+                    Eternal goal3 = new Eternal();
+
+                    startGoals = true;                    
+                }
+                else
+                {
+                    Console.WriteLine("Please make a valid selection.");
+                    menu.displayGoalTypes();
+
+                }
+
             }
             if(choice == 2)
             {
-                // foreach(Goal in goals)
-                // {
-                //     Console.WriteLine(Goal);
-                // }
-                Console.WriteLine("List Goals");
+                foreach(object Goal in goalsList)
+                {
+                    Console.WriteLine(Goal);
+                }
+
                 startGoals = true;
             }
             if(choice == 3)
@@ -65,6 +102,5 @@ class Program
             }
 
         }
-
     }
-}
+}    
