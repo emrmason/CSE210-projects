@@ -116,7 +116,7 @@ class Program
                             }
                             else if(goal._type == "C")
                             {
-                                outputFile.WriteLine($"{i++}. |[ ] | {goal._name}, | {goal._description}, | worth {goal._pointVal} points | {goal._type} | {goal._numTillDone} / {goal._numEntries} completed.");
+                                outputFile.WriteLine($"{i++}. |[ ] | {goal._name}, | {goal._description}, | worth {goal._pointVal} points | {goal._type} | {goal._numEntries} / {goal._numTillDone} completed.");
                             }
                             else if(goal._type == "E")
                             {
@@ -183,7 +183,7 @@ class Program
             {
                 Console.WriteLine("Well done for working on your goals!");
                 startGoals = false;
-                Console.Clear;
+                //Console.Clear;
             }
             // else
             // {

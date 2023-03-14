@@ -67,8 +67,7 @@ public int promptEntries()
     Console.WriteLine("\nHow many times until this goal is complete? ");
     int numTillDone = Int32.Parse(Console.ReadLine());
     _numTillDone = numTillDone;
-    _numEntries = 3;
-    return _numEntries + _numTillDone;
+    return _numTillDone; 
 
 }
 
