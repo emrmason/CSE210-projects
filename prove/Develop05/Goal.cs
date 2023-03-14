@@ -13,6 +13,7 @@ class Goal
     public int _numTillDone;
     public bool _isComplete;
     public int _pointsEarned;
+    public string check;
     // string _checkBox;
     // string _checkedOff;
     // https://www.c-sharpcorner.com/UploadFile/mahesh/create-a-list-of-objects-in-C-Sharp/
@@ -28,7 +29,7 @@ class Goal
         _name = name;
         _description = description;
         _pointVal = pointVal;
-        _isComplete = false;
+        _isComplete = isComplete;
         _numEntries = numEntries;
         _numTillDone = numTillDone;
 
@@ -59,6 +60,19 @@ class Goal
         int points = Int32.Parse(Console.ReadLine());
         _pointVal = points;
         return _pointVal;
+    }
+
+    public string IsComplete(bool _isComplete)
+    {
+        if(_isComplete == true)
+        {
+            check = "X";
+        }
+        else if(_isComplete == false)
+        {
+            check = " ";
+        }
+        return check;
     }
 
 

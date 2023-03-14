@@ -84,6 +84,8 @@ class Program
                     int pworth = Goal._pointVal;
                     int numEntries = Goal._numEntries;
                     int numTillDone = Goal._numTillDone;
+                    bool isComplete = Goal._isComplete;
+
                     
                     if(Goal._type == "S")
                     {
@@ -160,7 +162,32 @@ class Program
             {
                 Console.WriteLine("Which goal are you recording?");
                 int goalNum = Int32.Parse(Console.ReadLine());
-
+                int i = 1;
+                foreach(Goal goal in goalsList)
+                {
+                    if(i == goalNum)
+                    {   
+                        if(goal._type == "S")
+                        {
+                            goalsList[i]._isComplete = true;
+                            points += goal._pointVal;
+                        }
+                        if(goal._type == "C")
+                        {
+                            goal._numTillDone += 1;
+                            points += goal._pointVal;
+                        }
+                        if(goal._type == "E")
+                        {
+                            points += goal._pointVal;
+                        }
+                        else
+                        {
+                            
+                        }
+                    }
+                }
+                Console.WriteLine($"Well done! You've earned {points} points! ");
                 startGoals = true;
             }
 
