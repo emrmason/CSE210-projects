@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 class Program
 {        
@@ -33,9 +34,9 @@ class Program
                 {
                     x += 1;
                     Simple goal1 = new Simple();
-                    string name = goal1.getName();
-                    string desc = goal1.getDesc();
-                    int pointVal = goal1.getPoints();
+                    string name = goal1.promptName();
+                    string desc = goal1.promptDesc();
+                    int pointVal = goal1.promptPoints();
                     // string goal11 = goal1.ToString();
                     goalsList.Add(goal1);
                     // startGoals = true; 
@@ -45,10 +46,10 @@ class Program
                 {
                     x += 1;
                     Checklist goal2 = new Checklist();
-                    string name = goal2.getName();
-                    string desc = goal2.getDesc();
-                    int pointVal = goal2.getPoints();
-                    int numEntries = goal2.getEntries();
+                    string name = goal2.promptName();
+                    string desc = goal2.promptDesc();
+                    int pointVal = goal2.promptPoints();
+                    int numEntries = goal2.promptEntries();
                     goalsList.Add(goal2);
                     // startGoals = true;                    
                 }
@@ -56,9 +57,9 @@ class Program
                 {
                     x += 1;
                     Eternal goal3 = new Eternal();
-                    string name = goal3.getName();
-                    string desc = goal3.getDesc();
-                    int pointVal = goal3.getPoints();
+                    string name = goal3.promptName();
+                    string desc = goal3.promptDesc();
+                    int pointVal = goal3.promptPoints();
                     goalsList.Add(goal3);
                     // startGoals = true;                    
                 }
@@ -85,8 +86,17 @@ class Program
 
             if(choice == 3)
             {
-                
                 Console.WriteLine("\nWhat filename should this save to? ");
+                string fileName = (Console.ReadLine());
+                int i = 0;
+                    using (StreamWriter outputFile = new StreamWriter(fileName))
+                    {
+                        foreach (Goal goal in goalsList)
+                        {
+                        outputFile.WriteLine($"{i++}. |[ ] | {goal._name}, | {goal._description}, | worth {goal._pointVal} points.");
+                        }
+                    }
+
                 startGoals = true;
             }
 
@@ -94,7 +104,8 @@ class Program
             {
                 Console.WriteLine("Enter the filename to be opened: ");
                 string filename = (Console.ReadLine());
-                string lines = System.IO.File.ReadAllLines(filename);
+                string[] lines = System.IO.File.ReadAllLines(filename);
+
                 startGoals = true;
             }
 
