@@ -22,8 +22,9 @@ class Goal
 
     }
 
-    public Goal(string name, string description, int pointVal, bool isComplete, int numEntries, int numTillDone)
+    public Goal(string type, string name, string description, int pointVal, bool isComplete, int numEntries, int numTillDone)
     {
+        _type = type;
         _name = name;
         _description = description;
         _pointVal = pointVal;
@@ -60,27 +61,33 @@ class Goal
         return _pointVal;
     }
 
-    public void fileToList()
-    {
-        Console.WriteLine("Enter the filename to be opened: ");
-        string filename = (Console.ReadLine());
-        string[] lines = System.IO.File.ReadAllLines(filename);
-            foreach(string line in lines)
-            {
-                string[] parts = line.Split("|");
-                _name = parts[0];
-                _description = parts [1];
-                _pointVal = Int32.Parse(parts [2]);
-                _isComplete = bool.Parse(parts [3]);
-                _type = parts[4];
-                _numEntries = Int32.Parse(parts[5]);
-                _numTillDone = Int32.Parse(parts[6]);
-                if(_type == "S")
-                {
-                    
-                }
-            }
-    }
+
+    // public string Serialize()
+    // {
+
+    // }
+    //     public string DeSerialize(string filename)
+    // {   
+    //     string[] lines = System.IO.File.ReadAllLines(filename);
+    //     foreach(string line in lines)
+    //     {
+    //         string[] parts = line.Split("|");
+    //         _name = parts[0];
+    //         _description = parts [1];
+    //         _pointVal = Int32.Parse(parts [2]);
+    //         _isComplete = bool.Parse(parts [3]);
+    //         _type = parts[4];
+    //         _numEntries = Int32.Parse(parts[5]);
+    //         _numTillDone = Int32.Parse(parts[6]);
+
+    //         if(_type == "S")
+    //         {
+    //             Goal goal = new Goal(_type, _name, _description, _pointVal, _isComplete, _numEntries, _numTillDone);
+    //         }
+
+
+    //     }
+    // }
 
 
 }

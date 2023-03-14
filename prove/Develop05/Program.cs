@@ -74,15 +74,17 @@ class Program
 
             if(choice == 2)
             {
+                int x = 1;
                 foreach(Goal Goal in goalsList)
                 {
                     Goal glist = new Goal();
                     string name = Goal._name;
+                    string type = Goal._type;
                     string desc = Goal._description;
                     int pworth = Goal._pointVal;
                     int numEntries = Goal._numEntries;
                     int numTillDone = Goal._numTillDone;
-                    int x = 1;
+                    
                     if(Goal._type == "S")
                     {
                         Console.WriteLine($"{x++}. [ ] {name}, {desc}, worth {pworth} points.");
@@ -135,40 +137,23 @@ class Program
 
             if(choice == 4)
             {
-                    Console.WriteLine("Enter the filename to be opened: ");
-                    string filename = (Console.ReadLine());
+                Goal goal = new Goal();
+                Console.WriteLine("Enter the filename to be opened: ");
+                string filename = (Console.ReadLine());
                     string[] lines = System.IO.File.ReadAllLines(filename);
-                    Goal goal4 = new Goal();
-
                     foreach(string line in lines)
                     {
                         string[] parts = line.Split("|");
-                        goal4._name = parts[0];
-                        goal4._description = parts [1];
-                        goal4._pointVal = Int32.Parse(parts [2]);
-                        goal4._isComplete = bool.Parse(parts [3]);
-                        goal4._type = parts[4];
-                        goal4._numEntries = Int32.Parse(parts[6]);
-                        goal4._numTillDone = Int32.Parse(parts[5]);
-                        goalsList.Add(goal4);
-                        // if(goal4._type == "S")
-                        // {
-                        //     goalsList.Add(goal4);
-                        // }
-                        // if(goal4._type == "C")
-                        // {
-                        //     goalsList.Add(goal4);
-                        // }
-                        // if(goal4._type == "E")
-                        // {
-                        //     goalsList.Add(goal4);
-                        // }
-                        // else
-                        // {
-                        //     Console.WriteLine("Error.");
-                        //     break;
-                        // }
-            }
+                        goal._name = parts[0];
+                        goal._description = parts [1];
+                        goal._pointVal = Int32.Parse(parts [2]);
+                        goal._isComplete = bool.Parse(parts [3]);
+                        goal._type = parts[4];
+                        goal._numEntries = Int32.Parse(parts[5]);
+                        goal._numTillDone = Int32.Parse(parts[6]);
+                    }
+                    goalsList.Add(goal);
+
             }
 
             if(choice == 5)
