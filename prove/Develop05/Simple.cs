@@ -5,16 +5,23 @@ using System.IO;
 class Simple : Goal 
 {
     //int x = 0;
-    bool isComplete = false;
+    bool _isComplete = false;
+    // string _type = "S";
 
 public Simple()
 {
+    _type = "S";
 
 }
 
-public Simple(string _name, string _description, int _pointVal, bool _isComplete) 
+public Simple(string name, string description, int pointVal, bool isComplete) 
 {
-
+    _type = "S";
+    _name = name;
+    _description = description;
+    _pointVal = pointVal;
+    _isComplete = isComplete;
+    
 }
 public string getName()
 {

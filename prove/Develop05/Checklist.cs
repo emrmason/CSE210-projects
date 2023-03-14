@@ -4,13 +4,23 @@ using System.IO;
 
 class Checklist : Goal
 {
-    int x = 0;
-    bool isComplete = false;
-    int numEntries = 0;
-    int numTillDone = 0;
+    // int x = 0;
+    bool _isComplete = false;
+    int _numEntries = 0;
+    int _numTillDone = 0;
 
     public Checklist()
     {
+        _type = "C";
+    }
+    public Checklist(string name, string desc, int points, int numTillDone, int numEntries)
+    {
+        _type = "C";
+        _name = name;
+        _description = desc;
+        _pointVal = points;
+        _numTillDone = numTillDone;
+        _numEntries = numEntries;
 
     }
 
@@ -55,9 +65,10 @@ class Checklist : Goal
 public int promptEntries()
 {
     Console.WriteLine("\nHow many times until this goal is complete? ");
-    int numEntries = Int32.Parse(Console.ReadLine());
-    _numEntries = numEntries;
-    return _numEntries;
+    int numTillDone = Int32.Parse(Console.ReadLine());
+    _numTillDone = numTillDone;
+    _numEntries = 3;
+    return _numEntries + _numTillDone;
 
 }
 

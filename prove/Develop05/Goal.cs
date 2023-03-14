@@ -5,11 +5,14 @@ using System.IO;
 class Goal
 {
     // int x = 0;
+    public string _type;
     public string _name;
     public string _description;
     public int _pointVal;
     public int _numEntries;
-    bool _isComplete;
+    public int _numTillDone;
+    public bool _isComplete;
+    public int _pointsEarned;
     // string _checkBox;
     // string _checkedOff;
     // https://www.c-sharpcorner.com/UploadFile/mahesh/create-a-list-of-objects-in-C-Sharp/
@@ -19,12 +22,14 @@ class Goal
 
     }
 
-    public Goal(string name, string description, int pointVal, bool isComplete)
+    public Goal(string name, string description, int pointVal, bool isComplete, int numEntries, int numTillDone)
     {
         _name = name;
         _description = description;
         _pointVal = pointVal;
         _isComplete = false;
+        _numEntries = numEntries;
+        _numTillDone = numTillDone;
 
     }
 
@@ -67,7 +72,13 @@ class Goal
                 _description = parts [1];
                 _pointVal = Int32.Parse(parts [2]);
                 _isComplete = bool.Parse(parts [3]);
-                
+                _type = parts[4];
+                _numEntries = Int32.Parse(parts[5]);
+                _numTillDone = Int32.Parse(parts[6]);
+                if(_type == "S")
+                {
+                    
+                }
             }
     }
 
