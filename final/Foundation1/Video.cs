@@ -4,11 +4,11 @@ using System.Collections;
 class Video
 {
     public string _title;
-    string _author;
-    int _length;
-    int _numComments;
+    public string _author;
+    public int _length;
+    public int _numComments;
 
-    List<Video> videos = new List<Video>();
+    List<Comment> comments = new List<Comment>();
 
     public Video()
     {
@@ -19,8 +19,18 @@ class Video
         _title = title;
         _author = author;
         _length = length;
-        videos.Add(Video);
+        // videos.Add(Video);
     }
 
+    public string NewVid()
+    {
+        Console.WriteLine("What is the video title?");
+        string _title = Console.ReadLine();
+        Console.WriteLine("Who is the author of the video?");
+        string _author = Console.ReadLine();
+        Console.WriteLine("How long (in seconds)is the video?");
+        int _length = Int32.Parse(Console.ReadLine());
+        return "";
+    }
 
 }
