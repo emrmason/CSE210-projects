@@ -45,7 +45,6 @@ class Program
                 }
             }    
             Console.WriteLine($"Title: {title}, By: {author}, Length: {length} seconds, Comments: {x} ");
-
         }
     }
 }
