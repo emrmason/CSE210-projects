@@ -8,7 +8,7 @@ class Video
     public int _length;
     public int _numComments;
 
-    List<Comment> comments = new List<Comment>();
+    // public List<Comment> comments = new List<Comment>();
 
     public Video()
     {
@@ -32,5 +32,6 @@ class Video
         int _length = Int32.Parse(Console.ReadLine());
         return "";
     }
+
 
 }

@@ -3,9 +3,9 @@ using System.Collections;
 
 class Comment
 {
-    protected string _vidTitle;
-    protected string _commentor;
-    protected string _comment;
+    public string _vidTitle;
+    public string _commentor;
+    public string _comment;
 
 
 public Comment()
