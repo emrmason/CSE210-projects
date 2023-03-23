@@ -4,8 +4,17 @@ class Program
 {
     static void Main(string[] args)
     {
+         // Menu to choose which video to view comments on.
+        List <string> menu = new List<string>
+        {
+            "1. View Video List",
+            "2. View Video Comments",
+            "3. Quit"
+        };
         List<Video> videos = new List<Video>();
         List<Comment> comments = new List<Comment>();
+        int i = 1;
+        bool start = true;
 
         Video video1 = new Video("Fungus Among Us", "Obi-Wan Kenobi", 605);
         videos.Add(video1);
@@ -31,20 +40,79 @@ class Program
         Comment comment4 = new Comment("Fungus Among Us", "Shelly Long", "Mushrooms are super gross. ");
         comments.Add(comment4);
 
-        foreach(Video video in videos)
+        while(start == true)
         {
-            int x = 0;
-            string title = video._title;
-            string author = video._author;
-            int length = video._length;
-            foreach(Comment comment in comments)
+            Console.WriteLine("\n -- Video List and Comments -- \nWhat would you like to do?\n");
+            foreach(string y in menu)
             {
-                if(video._title == comment._vidTitle)
-                {
-                    x += 1;
+                Console.WriteLine(y);
+            }
+            Console.Write("\nPlease enter your selection: ");
+            int option = Int32.Parse(Console.ReadLine());
+
+            if(option == 1)
+            {        // automatically iterate through videos and display video info and # of comments.
+                foreach(Video video in videos)
+                {   
+                    int x = 0;
+                    string title = video._title;
+                    string author = video._author;
+                    int length = video._length;
+                    foreach(Comment comment in comments)
+                    {
+                        if(video._title == comment._vidTitle)
+                        {
+                            x += 1;
+                        }
+                    }    
+                    Console.WriteLine($"{i}. Title: {title}, By: {author}, Length: {length} seconds, Comments: {x} ");
+                    i++;
+                    start = true;
                 }
-            }    
-            Console.WriteLine($"Title: {title}, By: {author}, Length: {length} seconds, Comments: {x} ");
+            }
+            else if (option == 2)
+            {
+                Console.WriteLine("\nFor which video (number) would you like the list of comments to display?");
+                int vComments = Int32.Parse(Console.ReadLine());
+                int position = 0;
+                foreach(Video video in videos)
+                {
+                    position++;
+                        if(vComments == position)
+                        {
+                            foreach(Comment comment in comments)
+                            {
+                                string author = comment._commentor;
+                                string text = comment._comment;
+                                Console.WriteLine($"{author} says: {text}");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("This video has no comments.");
+                        }
+                    
+                }
+
+                start = true;
+                // 
+            }
+            else if (option == 3)
+            {
+                Console.WriteLine("\nThank you for using our program. Goodbye!");
+                start = false;
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Invalid selection. This program will end.");
+                start = false;
+                break;
+            }
         }
+
+
+
+
     }
 }
