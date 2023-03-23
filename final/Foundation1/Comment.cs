@@ -29,6 +29,7 @@ public Comment(string title, string commentor, string comment)
 //     return _vidTitle;
 // }
 
+// In case I want the user to be able to enter comments...
 public string newComment()
 {
     Console.WriteLine("Comment by: ");

@@ -37,8 +37,26 @@ class Program
         Comment comment3 = new Comment("Joseph Smith - Boyhood", "Chili Palmer", "I never expected him to be so... human. ");
         comments.Add(comment3);
 
-        Comment comment4 = new Comment("Fungus Among Us", "Shelly Long", "Mushrooms are super gross. ");
+        Comment comment4 = new Comment("Take a Chance", "Shelly Long", "Now this is my kind of music!");
         comments.Add(comment4);
+        
+        Comment comment5 = new Comment("Fungus Among Us", "Anakin Skywalker", "I have a bad feeling about this.");
+        comments.Add(comment5);
+
+        Comment comment6 = new Comment("Joseph Smith - Boyhood", "Anonymous", "This film solidified my testimony. Joseph Smith truly is a prophet of the Lord.");
+        comments.Add(comment6);
+
+        Comment comment7 = new Comment("James and Lily Potter", "Thor", "This is wonderful. I'll have another!");
+        comments.Add(comment7);
+
+        Comment comment8 = new Comment("Take a Chance", "Zuko","Why am I so bad at being good?!?");
+        comments.Add(comment8);
+
+        Comment comment9 = new Comment("Fungus Among Us","George Costanza","This film is terrible, don't waste your time.");
+        comments.Add(comment9);
+
+        Comment comment10 = new Comment("James and Lily Potter", "Elaine Benice", "She's a regifter!");
+        comments.Add(comment10);
 
         while(start == true)
         {
@@ -72,27 +90,36 @@ class Program
             }
             else if (option == 2)
             {
-                Console.WriteLine("\nFor which video (number) would you like the list of comments to display?");
-                int vComments = Int32.Parse(Console.ReadLine());
-                int position = 0;
+                Console.WriteLine("\nEnter the number of video that you'd like comments displayed: ");
+                int v = Int32.Parse(Console.ReadLine());
+                // int q = v-1; // calculate index # of the video from the list
+                int count = 0;
                 foreach(Video video in videos)
-                {
-                    position++;
-                        if(vComments == position)
-                        {
-                            foreach(Comment comment in comments)
+                {   
+                    count++;
+                    string title = video._title;
+                    if(v == count)
+                    {
+                        foreach(Comment comment in comments)
                             {
-                                string author = comment._commentor;
-                                string text = comment._comment;
-                                Console.WriteLine($"{author} says: {text}");
+                                if(video._title == comment._vidTitle)
+                                {
+                                    string author = comment._commentor;
+                                    string text = comment._comment;
+                                    Console.WriteLine($"{author} says: {text}");
+
+                                }
+                                // else
+                                // {
+                                //     Console.WriteLine("This video has no comments.");
+                                // }
                             }
                         }
-                        else
-                        {
-                            Console.WriteLine("This video has no comments.");
-                        }
+
+                    }
                     
-                }
+                    //make sure the title of the video matches the title on the comment...
+
 
                 start = true;
                 // 

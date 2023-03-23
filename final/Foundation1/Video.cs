@@ -22,6 +22,7 @@ class Video
         // videos.Add(Video);
     }
 
+    // In case I want the user to be able to add a new video...
     public string NewVid()
     {
         Console.WriteLine("What is the video title?");
