@@ -30,31 +30,26 @@ class Address
         state = _state;
         zip = _zip;
         country = _country;
-        IsInUS(country);
-        string addString = $"{_street},\n{_city}, {_state}, {_zip},\n{_country}";
+        string addString = $"{_street},\n{_city}, {_state} {_zip}\n{_country}";
         return addString;
     }
 
-    public bool IsInUS(string country)
+    public double IsInUS(string country)
     {
-        if(country == "USA" || country == "US")
+        country = _country;
+        double shipChg = 0.00;
+        if(_country == "USA" || _country == "US")
         {
             bool _inUS = true;
+            shipChg = 5.00;
         }
         else
         {
             bool _inUS = false;
+            shipChg = 35.00;
         }
 
-        if(_inUS == true)
-        {
-            int ship = 5;
-        }
-        else
-        {
-            int ship = 35;
-        }
-        return _inUS;
+        return shipChg;
     }
 
 
