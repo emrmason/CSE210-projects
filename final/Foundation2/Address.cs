@@ -8,7 +8,7 @@ class Address
     private string _zip;
     private string _country;
     private bool _inUS;
-    private int ship;
+    public int shipChg;
 
     public Address()
     {
@@ -23,15 +23,15 @@ class Address
         country = _country;
 
     }
-    public string newAddress(string strAdd, string city, string state, string zip, string country)
+    public void newAddress()
     {
-        strAdd = _street;
-        city = _city;
-        state = _state;
-        zip = _zip;
-        country = _country;
+        string strAdd = _street;
+        string city = _city;
+        string state = _state;
+        string zip = _zip;
+        string country = _country;
         string addString = $"{_street},\n{_city}, {_state} {_zip}\n{_country}";
-        return addString;
+        
     }
 
     public double IsInUS(string country)
@@ -40,12 +40,12 @@ class Address
         double shipChg = 0.00;
         if(_country == "USA" || _country == "US")
         {
-            bool _inUS = true;
+            _inUS = true;
             shipChg = 5.00;
         }
         else
         {
-            bool _inUS = false;
+            _inUS = false;
             shipChg = 35.00;
         }
 
