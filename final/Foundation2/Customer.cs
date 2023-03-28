@@ -38,16 +38,28 @@ class Customer
         string zip = Console.ReadLine();
         Console.WriteLine("Enter the country: ");
         string country = Console.ReadLine();
-        Address address = new Address(_custID, strAdd, city, state, zip, country);
-        _address = address._addString;
-        Customer customer1 = new Customer(_custName, _custID, _address);
+        Address address1 = new Address(_custID, strAdd, city, state, zip, country);
+        string _addyString = ($"{strAdd}\n{city}, {state} {zip}\n{country}");
+        // _address = address._addString;
+        Customer customer1 = new Customer(_custName, _custID, _addyString);
         customers.Add(customer1);
+        // Console.WriteLine($"{_custName} added to Customers.");
 
     }
     public void shipLabel(int custID)
     {
         string shipLabel = $"{_custName},\n{_address}";
         Console.WriteLine(shipLabel);
+    }
+    public void displayCustomers()
+    {
+        foreach(Customer customer in customers)
+        {
+            string name = customer._custName;
+            int id = customer._custID;
+            Console.WriteLine($"{id}. {name}");
+        }
+
     }
 
 }

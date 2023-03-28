@@ -33,6 +33,7 @@ class Program
             {
                 Customer customer = new Customer();
                 customer.createCustomer();
+                customer.displayCustomers();
                 start = true;
             }
             else if(choice == 2)
@@ -78,10 +79,10 @@ class Program
             }
             else if(choice == 6)
             {
+                Customer customer1 = new Customer();
                 foreach(Customer customer in customers)
-                {
-                   
-                }
+                customer.displayCustomers();
+
             }
             else if(choice == 7)
             {
