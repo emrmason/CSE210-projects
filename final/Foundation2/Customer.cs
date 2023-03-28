@@ -2,12 +2,12 @@ using System;
 
 class Customer
 {
-    // List<Address> addresses = new List<Address>();
-    List<string> customers = new List<string>();
+    List<Address> addresses = new List<Address>();
+    List<Customer> customers = new List<Customer>();
 
     private string _custName;
     private int _custID;
-    public Address address;
+    private string _address;
 
     // private bool inUS;
 
@@ -15,10 +15,11 @@ class Customer
     {
 
     }
-    public Customer(string name, int custID)
+    public Customer(string name, int custID, string addy)
     {
         name = _custName;
         custID = _custID;
+        addy = _address;
     }
 
     public void createCustomer()
@@ -27,13 +28,25 @@ class Customer
         _custName = Console.ReadLine();
         Console.WriteLine("Please enter the new customer ID: ");
         _custID = Int32.Parse(Console.ReadLine());
-        string customer1 = $"{_custID}: {_custName}";
+        Console.WriteLine("Enter the street address: ");
+        string strAdd = Console.ReadLine();
+        Console.WriteLine("Enter the city: ");
+        string city = Console.ReadLine();
+        Console.WriteLine("Enter the state: ");
+        string state = Console.ReadLine();
+        Console.WriteLine("Enter the zip: ");
+        string zip = Console.ReadLine();
+        Console.WriteLine("Enter the country: ");
+        string country = Console.ReadLine();
+        Address address = new Address(_custID, strAdd, city, state, zip, country);
+        _address = address._addString;
+        Customer customer1 = new Customer(_custName, _custID, _address);
         customers.Add(customer1);
 
     }
-    public void shipLabel()
+    public void shipLabel(int custID)
     {
-        string shipLabel = $"{_custName},\n{address}";
+        string shipLabel = $"{_custName},\n{_address}";
         Console.WriteLine(shipLabel);
     }
 

@@ -2,7 +2,17 @@ using System;
 
 class Product
 {
-    List<Product> products = new List<Product>();
+    List<string> products = new List<string>
+    {
+        "1| Outdoor Tent |100",
+        "2| 50 foot tarpaulin |50",
+        "3| Dehydrated meals(10) |30",
+        "4| Hiking boots |45",
+        "5| Waterproof rain jacket |50",
+        "6| Backpack |35",
+        "7| Camping Stove |40",
+        "8| Fire starting kit |10"
+    };
 
     public int _prodID;
     public string _prodName;
@@ -14,28 +24,13 @@ class Product
 
     }
 
-    public Product(int ID, string prod, double cost, int quant)
+    public Product(int ID, string prod, double cost)
     {
         ID = _prodID;
         prod = _prodName;
         cost = _price;
-        quant = _quantity;
+        int quant = _quantity;
 
-    }
-
-    public void newProduct()
-    {
-        Console.WriteLine("Enter the product number: ");
-        _prodID = Int32.Parse(Console.ReadLine());
-        Console.WriteLine("Enter the product name: ");
-        _prodName = Console.ReadLine();
-        Console.WriteLine("What is the price for this product(in US Dollars)? ");
-        _price = Double.Parse(Console.ReadLine());
-        Console.WriteLine("How many of this product would you like to order? ");
-        _quantity = Int32.Parse(Console.ReadLine());
-        string prod1 = $"{_prodID} ({_quantity}), {_prodName}";
-        Product product = new Product(_prodID, _prodName,_price, _quantity);
-        products.Add(product);
     }
 
     public double totalCost(int quantity, float price)
@@ -43,5 +38,29 @@ class Product
         double total = quantity * price;
         Console.WriteLine($"Total Cost: ${total}");
         return total;
+    }
+    
+    
+    public string addProducts()
+    { 
+        Console.WriteLine("Which product would you like to add? ");
+        foreach(string product in products)
+        {
+            string[] item = product.Split('|');
+            _prodID = Convert.ToInt32(item[0]);
+            _prodName = item[1];
+            _price = Convert.ToDouble(item[2]);
+            Console.WriteLine($"{_prodID}. {_prodName}, ${_price}");
+        }
+        int adding = Int32.Parse(Console.ReadLine());
+            if(adding == _prodID)
+            {
+                Console.WriteLine($"How many would you like to add to your order?");
+                int quantity = Int32.Parse(Console.ReadLine());
+                quantity = _quantity;
+                Console.WriteLine($"{quantity} {_prodName} has been added to your order.");
+            }
+        string summary = $"{_quantity} {_prodName}";
+        return summary;
     }
 }

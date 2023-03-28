@@ -2,6 +2,9 @@ using System;
 
 class Address
 {
+    List<Address> addresses = new List<Address>();
+    public int _custID;
+    public string _addString;
     private string _street;
     private string _city;
     private string _state;
@@ -14,8 +17,9 @@ class Address
     {
 
     }
-    public Address(string street, string city, string state, string zip, string country)
+    public Address(int custID, string street, string city, string state, string zip, string country)
     {
+        custID = _custID;
         street = _street;
         city = _city;
         state = _state;
@@ -23,14 +27,18 @@ class Address
         country = _country;
 
     }
-    public void newAddress()
+    public string newAddress(int custID)
     {
+        custID = _custID;
         string strAdd = _street;
         string city = _city;
         string state = _state;
         string zip = _zip;
         string country = _country;
-        string addString = $"{_street},\n{_city}, {_state} {_zip}\n{_country}";
+        Address addy1 = new Address(_custID, _street, _city, _state, _zip, _country);
+        addresses.Add(addy1);
+        _addString = $"{_street},\n{_city}, {_state} {_zip}\n{_country}";
+        return _addString;
         
     }
 

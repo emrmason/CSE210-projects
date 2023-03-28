@@ -2,62 +2,37 @@ using System;
 
 class Order
 {
-    List<Product> products = new List<Product>();
-    List<Customer> customers = new List<Customer>();
+    // List<Product> products = new List<Product>();
+    public int _custID;
+    private string _orderNumber;
+    public string _product;
 
- 
-    private int _orderNumber;
-
-    public Customer customer;
+    List<string> products = new List<string>();
 
     public Order()
     {
 
     }
-
-    public void newOrder()
+    public Order(int custID, string ordNumber, string prod)
     {
+        _custID = custID;
+        _orderNumber = ordNumber;
+        _product = prod;
+    }
+
+    public string newOrder()
+    {
+        Console.WriteLine("Enter the customer number: ");
+        int custID = Int32.Parse(Console.ReadLine());
         Console.WriteLine("Enter the new order number: ");
-        _orderNumber = Int32.Parse(Console.ReadLine());
-        Customer customer = new Customer();
-        customer.createCustomer();
-        customers.Add(customer);
+        _orderNumber = Console.ReadLine();
         Address address = new Address();
-        address.newAddress();
-        
-        Product prod1 = new Product();
-        prod1.newProduct();
-        customer.shipLabel();
-        packLabel(_orderNumber);
-
+        address.newAddress(custID);
+        Product product = new Product();
+        product.addProducts();
+        string _product = $"{product._prodID}. {product._prodName}, {product._quantity}";
+        products.Add(_product);
+        return _product;
     }
 
-    // public void displayShipLabel(string name, string address)
-    // {
-    //     string shipLabel = $"{custName}\n{address}";
-    //     Console.WriteLine(shipLabel);
-
-    // }
-    public void packLabel(int orderNum)
-    {
-        orderNum = _orderNumber;
-        string prodLabel = "";
-
-        foreach(Product product in products)
-        {
-            string name = product._prodName;
-            int number = product._prodID;
-            int quantity = product._quantity;
-            prodLabel = $"Item: {name} ({number}), Quantity: {quantity}";
-        }
-
-        string packLabel = $"{orderNum}\n{prodLabel}";
-        Console.WriteLine(packLabel);
-
-    }
-    // public float totalCost()
-    // {
-        
-
-    // }
 }
