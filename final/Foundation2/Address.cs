@@ -5,12 +5,12 @@ class Address
     List<Address> addresses = new List<Address>();
     public int _custID;
     public string _addString;
-    private string _street;
-    private string _city;
-    private string _state;
-    private string _zip;
-    private string _country;
-    private bool _inUS;
+    public string _street;
+    public string _city;
+    public string _state;
+    public string _zip;
+    public string _country;
+    public bool _inUS;
     public int shipChg;
 
     public Address()
