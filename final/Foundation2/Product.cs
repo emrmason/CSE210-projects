@@ -27,11 +27,14 @@ class Product
         _quantity = quant;
 
     }
-
-    public double totalCost(int quantity, double price)
+    public string getProd()
     {
-        double total = quantity * price;
-        Console.WriteLine($"Total Cost: ${total}");
+        return $"-- Product ID: {_prodID}, item: {_prodName}, quantity: {_quantity} ";
+    }
+    public double totalCost()
+    {
+        double total = _quantity * _price;
+        //Console.WriteLine($"Total Cost: ${total}");
         return total;
     }
     

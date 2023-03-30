@@ -5,11 +5,13 @@ class Customer
 {
     private string _custName;
     private Address _address;
+    private string _addy;
 
-    public Customer(string name, Address address)
+    public Customer(string name, Address _address)
     {
         _custName = name;
-        _address = address;
+        _addy = $"{_address.getAddString()}";
+
     }
     
     public string getName()
@@ -17,9 +19,8 @@ class Customer
         return $"{_custName}";
     }
     public string getAddy()
-    {
-        string custAdd = _address.ToString();
-        return $"{custAdd}";
+   {
+        return $"{_address.getAddString()}";
     }
     // public void shipLabel()
     // {

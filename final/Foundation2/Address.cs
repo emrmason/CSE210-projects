@@ -3,12 +3,13 @@ using System.Collections;
 
 class Address
 {
-    private string _addString;
     private string _street;
     private string _city;
     private string _state;
     public string _country;
-    // private bool _inUS;
+    public double _shipCost;
+    
+    public string _addString;
 
     public Address()
     {
@@ -24,18 +25,20 @@ class Address
 
     }
     
-    public bool inUS()
+    public double inUS()
     {
         if(_country == "US"|| _country == "USA")
         {
-            return true;
+            _shipCost = 5.00;
+            return _shipCost;
         }
-        return false;
+        _shipCost = 35.00;
+        return _shipCost;
     }
 
-       public string getAddressString()
+       public string getAddString()
     {
-        return _addString;
+        return $"{_street},\n{_city}, {_state}\n{_country}";
     }
 //     public string newAddress(int custID)
 //     {

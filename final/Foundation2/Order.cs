@@ -4,37 +4,56 @@ using System.Collections;
 
 class Order
 {
-    List<Product> _products = new List<Product>();
+    public List<Product> _products = new List<Product>();
     public Customer _customer;
+    public string _address;
 
-    public Order(List<Product> products, Customer customer)
+    public Order(Customer customer)
     {
-        _products = products;
         _customer = customer; 
+        _address = _customer.getAddy();
+
     }
 
-
-// clean this up!!!
-    public double totalPrice(Product product)
-    {
-        double totalPrice = 100.00;
-        return totalPrice;
-    }
 
     public void shipLabel(Customer _customer)
     {
-        string name = _customer.getName();
-        string addy = _customer.getAddy();        
+        
+        Console.WriteLine($">>>Shipping Label:\n{_customer.getName()}\n{_address}");
+        Console.WriteLine("--------------------\n");
+    
     }
 
     public void packLabel(List<Product> _products, Customer _customer)
     {
-        string cust = _customer.ToString();
-        Console.WriteLine($"{cust}");
-        for(int x = 0; x <= _products.Count; x++)
+        Console.WriteLine($">>>Packing Label for: \n{_customer.getName()}");
+
+        for(int x = 0; x < _products.Count; x++)
         {
-            Console.WriteLine($"{_products}");
+            string name = _products[x].getProd();
+            Console.WriteLine($"{name}");
+
         }
+        Console.WriteLine("--------------------\n");
+    }
+
+    public void totalBill(List<Product> _products, Customer _customer, Address _address)
+    {
+        Console.WriteLine($">>>Receipt for: \n{_customer.getName()}");
+        double total = 0;
+        double ship = _address.inUS();
+        total += ship;
+        for(int x = 0; x < _products.Count; x++)
+        {
+            total += _products[x].totalCost();
+            string name = _products[x].getProd();
+            Console.WriteLine($"{name}, ${_products[x].totalCost()}");
+
+        }
+        Console.WriteLine($"Shipping: ${ship}");
+        Console.WriteLine($"Total: ${total}");
+        Console.WriteLine("--------------------\n");
+
     }
 
 

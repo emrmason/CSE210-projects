@@ -5,10 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-
-        List<Order> orders = new List<Order>();
         List<Product> products = new List<Product>();
-        List<Product> orderProds = new List<Product>();
 
         Product product1 = new Product(1, "50 foot tarpaulin", 50.00, 1);
         products.Add(product1);
@@ -36,11 +33,22 @@ class Program
         Address address1 = new Address("1234 Main Street", "Santa Clarita", "CA", "USA");
         Customer customer1 = new Customer("Jane Doe", address1);
 
-        Order order1 = new Order(orderProds, customer1);
-        orderProds.Add(product1);
-        orderProds.Add(product3);
-        orderProds.Add(product7);
-        order1.packLabel(orderProds, customer1);
+        Address address2 = new Address("5678 State Street", "Salt Lake City", "UT", "US");
+        Customer customer2 = new Customer("Jill Jones", address2);
+
+        Address address3 = new Address("9876 Block Street", "Sheboygan", "MI", "USA");
+        Customer customer3 = new Customer("Cody Mavencort", address3);
+
+        Address address4 = new Address("5432 Corner Lane", "Okanogan", "WA", "US");
+        Customer customer4 = new Customer("Chili Palmer", address4);
+
+        Order order1 = new Order(customer1);
+        order1._products.Add(product10);
+        order1._products.Add(product7);
+        order1._products.Add(product8);
+        order1.packLabel(order1._products, customer1);
+        order1.shipLabel(customer1);
+        order1.totalBill(order1._products, customer1, address1);
 
 
 
