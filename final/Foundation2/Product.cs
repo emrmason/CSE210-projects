@@ -4,7 +4,7 @@ class Product
 {
     List<Product> products = new List<Product>();
     // {
-    //     "1| Outdoor Tent |100",
+    //     "1| Outdoor Tent| 100.00"
     //     "2| 50 foot tarpaulin |50",
     //     "3| Dehydrated meals(10) |30",
     //     "4| Hiking boots |45",
@@ -14,10 +14,10 @@ class Product
     //     "8| Fire starting kit |10"
     // };
 
-    public int _prodID;
-    public string _prodName;
-    public double _price;
-    public int _quantity;
+    private int _prodID;
+    private string _prodName;
+    private double _price;
+    // private int _quantity;
 
     public Product()
     {
@@ -29,7 +29,7 @@ class Product
         ID = _prodID;
         prod = _prodName;
         cost = _price;
-        int quant = _quantity;
+        // int quant = _quantity;
 
     }
 

@@ -2,39 +2,32 @@ using System;
 
 class Order
 {
-    // List<Product> products = new List<Product>();
-    public int _custID;
-    public string _orderNumber;
-    public string _product;
-    public int _quantity;
+    List<Product> _products = new List<Product>();
+    public Customer _customer;
 
-    List<string> products = new List<string>();
+    public Order(List<Product> products, Customer customer)
+    {
+        _customer = customer;
+        _products = products;
+    }
 
-    public Order()
+
+// clean this up!!!
+    public double totalPrice(Product product)
+    {
+        double totalPrice = 100.00;
+        return totalPrice;
+    }
+
+    public void shipLabel(Customer customer)
     {
 
     }
-    public Order(int custID, string ordNumber, Product product)
+
+    public void packLabel(Customer customer)
     {
-        _custID = custID;
-        _orderNumber = ordNumber;
-        Product product1 = product;
 
     }
 
-    // public string newOrder()
-    // {
-    //     Console.WriteLine("Enter the customer number: ");
-    //     int custID = Int32.Parse(Console.ReadLine());
-    //     Console.WriteLine("Enter the new order number: ");
-    //     _orderNumber = Console.ReadLine();
-    //     Address address = new Address();
-    //     address.newAddress(custID);
-    //     Product product = new Product();
-    //     product.addProducts();
-    //     string _product = $"{product._prodID}. {product._prodName}, {product._quantity}";
-    //     products.Add(_product);
-    //     return _product;
-    // }
 
 }
