@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 
 class Customer
 {
@@ -11,11 +12,20 @@ class Customer
         _address = address;
     }
     
-    public void shipLabel()
+    public string getName()
     {
-        string shipLabel = $"{_custName},\n{_address}";
-        Console.WriteLine(shipLabel);
+        return $"{_custName}";
     }
+    public string getAddy()
+    {
+        string custAdd = _address.ToString();
+        return $"{custAdd}";
+    }
+    // public void shipLabel()
+    // {
+    //     string shipLabel = $"{_custName},\n{_address}";
+    //     Console.WriteLine(shipLabel);
+    // }
 
 
 

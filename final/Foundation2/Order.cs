@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+
 
 class Order
 {
@@ -7,8 +9,8 @@ class Order
 
     public Order(List<Product> products, Customer customer)
     {
-        _customer = customer;
         _products = products;
+        _customer = customer; 
     }
 
 
@@ -19,14 +21,20 @@ class Order
         return totalPrice;
     }
 
-    public void shipLabel(Customer customer)
+    public void shipLabel(Customer _customer)
     {
-
+        string name = _customer.getName();
+        string addy = _customer.getAddy();        
     }
 
-    public void packLabel(Customer customer)
+    public void packLabel(List<Product> _products, Customer _customer)
     {
-
+        string cust = _customer.ToString();
+        Console.WriteLine($"{cust}");
+        for(int x = 0; x <= _products.Count; x++)
+        {
+            Console.WriteLine($"{_products}");
+        }
     }
 
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 
 class Address
 {
@@ -31,6 +32,11 @@ class Address
         }
         return false;
     }
+
+       public string getAddressString()
+    {
+        return _addString;
+    }
 //     public string newAddress(int custID)
 //     {
 //         custID = _custID;
@@ -45,10 +51,7 @@ class Address
 //         return _addString;
 //     }
 
-   public string getAddressString()
-    {
-        return _addString;
-    }
+
 
 
 

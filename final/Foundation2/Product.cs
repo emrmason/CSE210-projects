@@ -1,8 +1,41 @@
 using System;
+using System.Collections;
+
 
 class Product
 {
-    List<Product> products = new List<Product>();
+    private int _prodID;
+    private string _prodName;
+    private double _price;
+    private int _quantity;
+
+    public Product()
+    {
+
+    }
+    public Product(int ID, int quant)
+    {
+        _prodID = ID;
+        _quantity = quant;
+    }
+
+    public Product(int ID, string prod, double cost, int quant)
+    {
+        _prodID = ID;
+        _prodName = prod;
+        _price = cost;
+        _quantity = quant;
+
+    }
+
+    public double totalCost(int quantity, double price)
+    {
+        double total = quantity * price;
+        Console.WriteLine($"Total Cost: ${total}");
+        return total;
+    }
+    
+        //List<Product> products = new List<Product>();
     // {
     //     "1| Outdoor Tent| 100.00"
     //     "2| 50 foot tarpaulin |50",
@@ -14,32 +47,6 @@ class Product
     //     "8| Fire starting kit |10"
     // };
 
-    private int _prodID;
-    private string _prodName;
-    private double _price;
-    // private int _quantity;
-
-    public Product()
-    {
-
-    }
-
-    public Product(int ID, string prod, double cost)
-    {
-        ID = _prodID;
-        prod = _prodName;
-        cost = _price;
-        // int quant = _quantity;
-
-    }
-
-    public double totalCost(int quantity, float price)
-    {
-        double total = quantity * price;
-        Console.WriteLine($"Total Cost: ${total}");
-        return total;
-    }
-    
     
     // public string addProducts()
     // { 
