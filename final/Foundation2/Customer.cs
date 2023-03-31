@@ -10,7 +10,7 @@ class Customer
     public Customer(string name, Address _address)
     {
         _custName = name;
-        _addy = $"{_address.getAddString()}";
+        _addy = $"{_address.setAddString()}";
 
     }
     
@@ -20,7 +20,7 @@ class Customer
     }
     public string getAddy()
    {
-        return $"{_address.getAddString()}";
+        return $"{_addy}";
     }
     // public void shipLabel()
     // {

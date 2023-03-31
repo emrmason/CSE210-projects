@@ -36,7 +36,7 @@ class Address
         return _shipCost;
     }
 
-       public string getAddString()
+       public string setAddString()
     {
         return $"{_street},\n{_city}, {_state}\n{_country}";
     }

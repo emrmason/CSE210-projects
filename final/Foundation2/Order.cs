@@ -14,19 +14,17 @@ class Order
         _address = _customer.getAddy();
 
     }
-
-
     public void shipLabel(Customer _customer)
     {
         
-        Console.WriteLine($">>>Shipping Label:\n{_customer.getName()}\n{_address}");
+        Console.WriteLine($"\n>>>Shipping Label:\n{_customer.getName()}\n{_customer.getAddy()}");
         Console.WriteLine("--------------------\n");
     
     }
 
     public void packLabel(List<Product> _products, Customer _customer)
     {
-        Console.WriteLine($">>>Packing Label for: \n{_customer.getName()}");
+        Console.WriteLine($"\n>>>Packing Label for: \n{_customer.getName()}");
 
         for(int x = 0; x < _products.Count; x++)
         {
@@ -39,7 +37,7 @@ class Order
 
     public void totalBill(List<Product> _products, Customer _customer, Address _address)
     {
-        Console.WriteLine($">>>Receipt for: \n{_customer.getName()}");
+        Console.WriteLine($"\n>>>Receipt for: \n{_customer.getName()}");
         double total = 0;
         double ship = _address.inUS();
         total += ship;

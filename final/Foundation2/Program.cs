@@ -49,8 +49,52 @@ class Program
         order1.packLabel(order1._products, customer1);
         order1.shipLabel(customer1);
         order1.totalBill(order1._products, customer1, address1);
+        Console.Write("Press enter to see the next order.");
+        Console.ReadLine();
+        Console.Clear();
 
+        Order order2 = new Order(customer2);
+        order2._products.Add(product1);
+        order2._products.Add(product5);
+        order2._products.Add(product4);
+        order2._products.Add(product2);
+        order2.packLabel(order2._products, customer2);
+        order2.shipLabel(customer2);
+        order2.totalBill(order2._products, customer2, address2);
+        Console.Write("Press enter to see the next order.");
+        Console.ReadLine();
+        Console.Clear();
 
+        Order order3 = new Order(customer3);
+        order3._products.Add(product3);
+        order3._products.Add(product6);
+        order3._products.Add(product9);
+        order3._products.Add(product7);
+        order3.packLabel(order3._products, customer3);
+        order3.shipLabel(customer3);
+        order3.totalBill(order3._products, customer3, address3);
+        Console.Write("Press enter to see the next order.");
+        Console.ReadLine();
+        Console.Clear();
+
+        Order order4 = new Order(customer4);
+        order4._products.Add(product1);
+        order4._products.Add(product2);
+        order4._products.Add(product3);
+        order4._products.Add(product4);
+        order4._products.Add(product5);
+        order4._products.Add(product6);
+        order4._products.Add(product7);
+        order4._products.Add(product8);
+        order4._products.Add(product9);
+        order4._products.Add(product10);
+        order4.packLabel(order4._products, customer4);
+        order4.shipLabel(customer4);
+        order4.totalBill(order4._products, customer4, address4);
+        Console.Write("Press enter to see the next order.");
+        Console.ReadLine();
+        Console.Clear();        
+ 
 
 
 
