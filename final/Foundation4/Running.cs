@@ -4,12 +4,21 @@ class Running : Activity
 {
     protected float _distance;
 
-    Running(string date, int time, float dist)
+    public Running(float dist)
     {
-        _date = date;
-        _length = time;
+        string date = _date;
+        int time = _minutes;
         _distance = dist;
 
+    }
+
+    public Running()
+    {
+
+    }
+    public override string getDistance()
+    {
+        return "";
     }
 
 }
