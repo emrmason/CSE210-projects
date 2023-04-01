@@ -30,7 +30,7 @@ class Program
         Product product11 = new Product(11, "50 foot rope", 25.00, 1);
         products.Add(product11);
 
-        Address address1 = new Address("1234 Main Street", "Santa Clarita", "CA", "USA");
+        Address address1 = new Address("1234 Main Street", "Santa Clarita", "CA", "Vietnam");
         Customer customer1 = new Customer("Jane Doe", address1);
 
         Address address2 = new Address("5678 State Street", "Salt Lake City", "UT", "US");

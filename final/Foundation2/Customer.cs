@@ -10,10 +10,11 @@ class Customer
     public Customer(string name, Address _address)
     {
         _custName = name;
-        _addy = $"{_address.setAddString()}";
+        _addy = $"{_address._addString}";
 
     }
     
+
     public string getName()
     {
         return $"{_custName}";

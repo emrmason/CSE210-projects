@@ -8,7 +8,6 @@ class Address
     private string _state;
     public string _country;
     public double _shipCost;
-    
     public string _addString;
 
     public Address()
@@ -17,10 +16,10 @@ class Address
     }
     public Address(string street, string city, string state, string country)
     {
-        street = _street;
-        city = _city;
-        state = _state;
-        country = _country;
+        _street = street;
+        _city = city;
+        _state = state;
+        _country = country;
         _addString = $"{_street},\n{_city}, {_state}\n{_country}";
 
     }
@@ -36,10 +35,7 @@ class Address
         return _shipCost;
     }
 
-       public string setAddString()
-    {
-        return $"{_street},\n{_city}, {_state}\n{_country}";
-    }
+
 //     public string newAddress(int custID)
 //     {
 //         custID = _custID;
