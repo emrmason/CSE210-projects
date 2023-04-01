@@ -5,6 +5,8 @@ class Activity
     protected string _date;
     // length = time in minutes doing activity
     protected int _minutes;
+    protected string _summary;
+    protected string _activity;
 
     public Activity()
     {
@@ -17,18 +19,22 @@ class Activity
         _minutes = time;
     }
 
-    public virtual string getDistance()
+    public virtual double getLaps()
     {
-        return "";
+        return 0.00;
     }
-    public virtual string getSpeed()
+    public virtual double getDistance()
     {
-        return "";
+        return 0.00;
+    }
+    public virtual double getSpeed()
+    {
+        return 0.00;
     }
     
-    public virtual string getPace()
+    public virtual double getPace()
     {
-        return "";
+        return 0.00;
     }
     public virtual string getSummary()
     {
